@@ -2,7 +2,7 @@ import React from 'react';
 
 export const ErrorMessage = ({ message }) => {
   return (
-    <div className="col-span-4 w-full flex flex-col items-center justify-center text-center py-16 text-red-500">
+    <div className="col-span-full w-full flex flex-col items-center justify-center text-center py-16 text-red-500">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-12 w-12 mb-3 text-red-300"

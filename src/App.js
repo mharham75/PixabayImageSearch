@@ -18,19 +18,21 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setImages(data.hits);
+        console.log('length', data.hits.length);
+
         setError('');
       })
       .catch((err) => setError(err.message));
   }, [term]);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4">
       <ImageSearch searchText={(text) => setTerm(text)} />
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-start">
         {error ? (
           <ErrorMessage message={error} />
         ) : images.length === 0 ? (
-          <div className="col-span-4 w-full flex flex-col items-center justify-center text-center py-16 text-gray-500">
+          <div className="col-span-full w-full flex flex-col items-center justify-center text-center py-16 text-gray-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-12 w-12 mb-3 text-gray-300"
