@@ -50,8 +50,8 @@ function App() {
           </div>
         ) : (
           <>
-            {images.map((image) => (
-              <ImageCard key={image.id} image={image} />
+            {images.map((image, index) => (
+              <ImageCard key={`${image.id}-${index}`} image={image} />
             ))}
           </>
         )}
